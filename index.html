@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>천국의 정원 · 강아지의 방</title>
+  <link rel="stylesheet" href="./css/style.css" />
+  <!-- Three.js 를 로컬에 벤더링해 오프라인/어느 환경에서나 동작 -->
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "./vendor/three/build/three.module.js",
+        "three/addons/": "./vendor/three/addons/"
+      }
+    }
+  </script>
+</head>
+<body>
+  <!-- 3D 캔버스 -->
+  <canvas id="scene"></canvas>
+
+  <!-- 처음 들어올 때 어둠 → 빛 페이드인용 오버레이 -->
+  <div id="fade" aria-hidden="true"></div>
+
+  <!-- 방 안내 / 감성 카피 -->
+  <div id="hud">
+    <p class="room-title">우리 아이의 방</p>
+    <p class="room-sub">천천히 둘러보세요 · 드래그로 시선을 옮길 수 있어요</p>
+  </div>
+
+  <!-- 로딩 인디케이터 -->
+  <div id="loader">
+    <div class="loader-glow"></div>
+    <p>방에 불이 들어오고 있어요…</p>
+  </div>
+
+  <!-- 나가기 버튼 (메인 천국 씬으로 전환 · 현재는 페이드 데모) -->
+  <button id="exit" type="button" aria-label="방 나가기">‹ 천국의 정원으로</button>
+
+  <!-- 오브젝트 상세 패널 (액자/물건 클릭 시) -->
+  <div id="detail" aria-hidden="true">
+    <button class="detail-close" type="button" aria-label="닫기">×</button>
+    <div class="detail-media"></div>
+    <h3 class="detail-title"></h3>
+    <p class="detail-desc"></p>
+  </div>
+
+  <script type="module" src="./js/main.js"></script>
+</body>
+</html>
