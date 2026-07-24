@@ -1,70 +1,85 @@
-# 천국의 정원 · 강아지의 방 (Heaven's Garden — The Room)
+# RAHEL STUDIO — Portfolio
 
-무지개다리를 건넌 강아지를 추모하는 웹 서비스 **"천국의 정원"** 중,
-강아지 집을 클릭하면 들어가는 **강아지의 방 3D 인테리어** 프로토타입입니다.
+Strategy · Branding · Web Design for professionals.
 
-톤은 **잔잔한 감성 사실주의** — 창문 역광, 빛줄기(god rays), 떠다니는 먼지,
-따뜻한 안개로 조용히 그리움이 스며드는 공간을 목표로 합니다.
+A hand-built, **dependency-free static site** (plain HTML/CSS/JS). No build step,
+no framework — it runs anywhere and deploys to Vercel as-is. The approved 1st
+design is preserved exactly; this repo adds the independent, responsive, and
+deploy-ready structure around it.
 
-## 지금 담긴 것 (뼈대 1단계)
+---
 
-- 아늑한 실내 방 (나무 바닥 · 크림빛 벽 · 천장)
-- 창문 + 창밖 하늘(역광 광원) — 방 안으로 쏟아지는 **빛줄기**
-- 빛에 반짝이며 천천히 떠다니는 **미세 먼지**
-- 따뜻한 **안개(fog)** 로 깊이감
-- 골든아워 **조명** (방향광 + 앰비언트 + 힘미스피어 + 창가 필)
-- **후처리**: ACES 필름 톤매핑 · 블룸 · 비네트
-- 처음 들어올 때 **어둠 → 빛 페이드인** 연출
-- 강아지의 자리(방석 + 은은하게 숨쉬는 빛) — 나중에 `.glb` 강아지 모델로 교체
-- 느리고 부드러운 카메라 (드래그로 둘러보기, 미세 자동 회전)
-- 모바일/저사양 대비 **품질 프로파일** 자동 분기
+## Pages (4)
 
-## 다음 단계 (톤이 잡힌 뒤 채울 것)
+| Page | File | Content |
+|------|------|---------|
+| Home | `index.html` | Hero (RAHEL STUDIO), Selected Work preview, Approach, CTA banner |
+| Works | `works.html` | WORK 01 Brand Identity · 02 Web Design · 03 Editorial |
+| About | `about.html` | Studio statement, facts, 4-step process |
+| Contact | `contact.html` | Inquiry form (mailto) + contact details |
 
-- 벽면 사진/영상 **액자** + 클릭 시 카메라 접근·확대
-- 강아지의 물건 (담요, 밥그릇, 장난감, 뼈다귀)
-- 추모 오브젝트 (꽃병, 국화, 흔들리는 촛불)
-- 사용자 업로드로 액자/텍스처 교체
-- 메인 "천국의 정원" 씬과의 씬 전환 연결
+## Structure
 
-## 실행 방법
+```
+index.html  works.html  about.html  contact.html
+assets/
+  rahel.css      shared design system + responsive + mobile menu
+  rahel.js       reveal · 3D pointer · KO/EN toggle (persisted) · mobile menu · contact form
+  favicon.svg    brand favicon
+  og-image.png   1200×630 social share image
+img/             real case-study images go here (WORK 01–03 are CSS artwork for now)
+robots.txt  sitemap.xml  vercel.json
+```
 
-ES 모듈 + importmap 구조라 로컬 서버가 필요합니다 (`file://` 직접 열기는 불가).
+The CSS/JS are shared across all four pages — edit once, applies everywhere.
+
+## Local preview
+
+Pure static site — open with any local server:
 
 ```bash
-# 저장소 루트에서
 python3 -m http.server 8000
-# 또는
+# or
 npx serve .
 ```
 
-브라우저에서 `http://localhost:8000` 접속. (Three.js는 jsDelivr CDN에서 로드)
+Then visit http://localhost:8000. Opening the files directly (`file://`) also
+works for a quick look.
 
-## 구조
+## Deploy to Vercel
 
-```
-index.html            엔트리 · UI 오버레이(로더/HUD/상세 패널)
-css/style.css         감성 UI 스타일
-js/
-  config.js           톤·성능·에셋을 한 곳에서 관리 + 품질 자동 감지
-  main.js             씬 오케스트레이터 · 렌더 루프 · 페이드인
-  scene/
-    Room.js           바닥·벽·천장·창문
-    Lighting.js       조명 세팅
-    GodRays.js        빛줄기(볼류메트릭 근사)
-    Dust.js           떠다니는 먼지 입자
-    DogSpot.js        강아지의 자리(빛으로 암시)
-  postfx/
-    composer.js       블룸·비네트·톤매핑 파이프라인
-  util/
-    textures.js       절차적 텍스처(나무·먼지·하늘·빛줄기)
-```
+1. Push this repo to GitHub.
+2. In Vercel: **New Project → Import** this repo.
+3. Framework preset: **Other** (no build command, output = repo root). Deploy.
 
-모든 톤/성능 값은 `js/config.js` 에서 조정할 수 있습니다.
-에셋(사진, 강아지 모델)은 `config.assets` 를 통해 나중에 교체하도록 분리해 두었습니다.
+`vercel.json` sets long-cache headers for `assets/` and `img/`. Nothing else to configure.
 
-## 라이선스 · 서드파티
+### After you have a domain
+Replace `https://YOUR-DOMAIN` in **`robots.txt`** and **`sitemap.xml`** with your
+real domain, and (optionally) add a matching `<link rel="canonical">` and absolute
+`og:url` to each page's `<head>`.
 
-- 3D 엔진: [Three.js](https://threejs.org) r160 (MIT License) — `vendor/three/` 에
-  필요한 모듈만 벤더링했습니다. CDN 없이 오프라인으로 동작하기 위함입니다.
+## Customizing
 
+- **Contact email** — one place in `assets/rahel.js` (`CONTACT_EMAIL`), plus the
+  `data-email` attribute and `mailto:` links in `contact.html` / footers. Currently
+  `eunakim1984@gmail.com` — change it to a business address or a form service.
+- **Text / translations** — edit inline `data-ko` / `data-en` attributes in the HTML.
+  The KO/EN toggle (top right) swaps them live and remembers the choice across pages.
+- **Colors / spacing / radius** — CSS variables in `:root` at the top of `assets/rahel.css`.
+- **Real work images** — see `img/README.md` for how to swap a CSS cover for a real image.
+
+## Contact form
+
+The form opens the visitor's mail app pre-filled (`mailto:`). For reliable
+inquiry collection without a backend, connect it to a service such as
+[Formspree](https://formspree.io): point the form's action/endpoint at your form
+ID. The mailto flow stays as a no-JS fallback.
+
+## Notes
+
+- Fully responsive; verified at 375 / 430 / 768 / 1440 / 1920 px.
+- Accessibility: skip link, keyboard focus rings, labelled controls, `prefers-reduced-motion` respected.
+- WORK 01–03 visuals are temporary CSS artwork, ready to be replaced by real case studies.
+- An earlier unrelated "천국의 정원 · 강아지의 방" 3D prototype lived in this repo; it's
+  removed from the working tree but preserved in git history (commit `595feb4`).
