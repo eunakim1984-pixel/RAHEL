@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ko" data-lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact — RAHEL Studio</title>
+  <meta name="description" content="Rahel Studio에 프로젝트를 문의하세요. 24시간 이내에 답장드립니다." />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Crect width=%27100%27 height=%27100%27 rx=%2722%27 fill=%27%231d1d1f%27/%3E%3Ctext x=%2750%27 y=%2772%27 text-anchor=%27middle%27 font-family=%27Arial,sans-serif%27 font-size=%2766%27 font-weight=%27700%27 fill=%27%23ffffff%27%3ER%3C/text%3E%3C/svg%3E" />
+  <link rel="stylesheet" href="./css/style.css" />
+</head>
+<body>
+
+  <!-- ===== NAV ===== -->
+  <header class="nav" id="nav">
+    <div class="nav__inner">
+      <a class="nav__logo" href="./index.html">RAHEL</a>
+      <nav class="nav__menu" aria-label="Primary">
+        <a href="./work.html" data-i18n="nav.work">작업</a>
+        <a href="./about.html" data-i18n="nav.about">소개</a>
+        <a href="./contact.html" data-i18n="nav.contact">문의</a>
+      </nav>
+      <div class="nav__right">
+        <button class="lang" id="langToggle" type="button" aria-label="Language">
+          <span data-lang-label>EN</span>
+        </button>
+        <button class="nav__burger" id="burger" type="button" aria-label="Menu" aria-expanded="false"><span></span><span></span></button>
+      </div>
+    </div>
+  </header>
+  <div class="mmenu" id="mmenu">
+    <a href="./work.html" data-i18n="nav.work">작업</a>
+    <a href="./about.html" data-i18n="nav.about">소개</a>
+    <a href="./contact.html" data-i18n="nav.contact">문의</a>
+  </div>
+
+  <!-- ===== CONTACT ===== -->
+  <section class="section" style="padding-top: calc(var(--nav-h) + clamp(56px,9vw,110px))">
+    <div class="container">
+      <div class="contact-grid">
+
+        <!-- info -->
+        <div class="contact-info">
+          <span class="eyebrow reveal" data-i18n="contact.kicker">Contact</span>
+          <h1 class="reveal" data-delay="1" data-i18n="contact.title">프로젝트를 시작해볼까요?</h1>
+          <p class="lead reveal" data-delay="2" data-i18n="contact.lead">브랜딩, 웹사이트, 에디토리얼 — 무엇이든 편하게 이야기해 주세요. 24시간 이내에 답장드립니다.</p>
+
+          <div class="contact-details reveal" data-delay="3">
+            <div class="cdetail">
+              <div class="k" data-i18n="contact.emailK">이메일</div>
+              <a class="v" href="mailto:hello@rahelstudio.com">hello@rahelstudio.com</a>
+            </div>
+            <div class="cdetail">
+              <div class="k" data-i18n="contact.hoursK">응답 시간</div>
+              <div class="v" data-i18n="contact.hoursV">평일 · 24시간 이내</div>
+            </div>
+            <div class="cdetail">
+              <div class="k" data-i18n="contact.basedK">위치</div>
+              <div class="v" data-i18n="contact.basedV">대한민국 · 온라인 진행</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- form -->
+        <form class="form reveal" data-delay="1" id="contactForm" novalidate>
+          <div class="field two">
+            <div class="field">
+              <label for="f-name"><span data-i18n="contact.form.name">이름</span> <span class="req">*</span></label>
+              <input id="f-name" name="name" type="text" required
+                     data-i18n-attr="placeholder:contact.form.name_ph" placeholder="성함을 입력해 주세요" />
+            </div>
+            <div class="field">
+              <label for="f-email"><span data-i18n="contact.form.email">이메일</span> <span class="req">*</span></label>
+              <input id="f-email" name="email" type="email" required
+                     data-i18n-attr="placeholder:contact.form.email_ph" placeholder="you@example.com" />
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="f-type" data-i18n="contact.form.type">문의 유형</label>
+            <select id="f-type" name="type">
+              <option data-i18n="contact.form.type_brand" value="Brand Identity">브랜드 아이덴티티</option>
+              <option data-i18n="contact.form.type_web" value="Web Design">웹사이트 디자인</option>
+              <option data-i18n="contact.form.type_editorial" value="Editorial">에디토리얼 · 인쇄물</option>
+              <option data-i18n="contact.form.type_other" value="Other">기타 / 상담</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="f-msg"><span data-i18n="contact.form.msg">프로젝트 내용</span> <span class="req">*</span></label>
+            <textarea id="f-msg" name="message" required
+                      data-i18n-attr="placeholder:contact.form.msg_ph"
+                      placeholder="어떤 일을 하시는지, 무엇이 필요한지 편하게 적어주세요."></textarea>
+          </div>
+
+          <div class="form__foot">
+            <button class="btn btn--big" type="submit" data-i18n="contact.form.submit">문의 보내기</button>
+            <span class="form__status" role="status" aria-live="polite"></span>
+          </div>
+          <p class="form__note" data-i18n="contact.form.note">보내주신 내용은 이메일로 전달됩니다.</p>
+        </form>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div>
+        <div class="footer__logo">RAHEL STUDIO</div>
+        <div style="margin-top:6px" data-i18n="footer.tagline">Designer &amp; Creative Director</div>
+      </div>
+      <div class="footer__links">
+        <a href="./work.html" data-i18n="footer.work">작업</a>
+        <a href="./about.html" data-i18n="footer.about">소개</a>
+        <a href="./contact.html" data-i18n="footer.contact">문의</a>
+      </div>
+      <div>© <span id="year"></span> Rahel Studio · <span data-i18n="footer.rights">All rights reserved.</span></div>
+    </div>
+  </footer>
+
+  <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+  <script src="./js/i18n.js"></script>
+  <script src="./js/main.js"></script>
+  <script src="./js/contact.js"></script>
+</body>
+</html>

@@ -3,11 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>RAHEL — Designer & Creative Director</title>
-  <meta name="description" content="Rahel Studio — 전문직을 위한 브랜딩과 웹 기획. 데이터를 근거로 신뢰를 디자인합니다." />
-  <meta property="og:title" content="RAHEL — Designer & Creative Director" />
-  <meta property="og:description" content="전문직을 위한 브랜딩과 웹 기획. 데이터를 근거로 신뢰를 디자인합니다." />
-  <meta property="og:type" content="website" />
+  <title>Work — RAHEL Studio</title>
+  <meta name="description" content="Rahel Studio의 선택된 작업 — 브랜드 아이덴티티, 웹 디자인, 에디토리얼." />
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Crect width=%27100%27 height=%27100%27 rx=%2722%27 fill=%27%231d1d1f%27/%3E%3Ctext x=%2750%27 y=%2772%27 text-anchor=%27middle%27 font-family=%27Arial,sans-serif%27 font-size=%2766%27 font-weight=%27700%27 fill=%27%23ffffff%27%3ER%3C/text%3E%3C/svg%3E" />
   <link rel="stylesheet" href="./css/style.css" />
 </head>
@@ -36,56 +33,58 @@
     <a href="./contact.html" data-i18n="nav.contact">문의</a>
   </div>
 
-  <!-- ===== HERO (full screen) ===== -->
-  <section class="hero">
-    <div class="hero__aurora" aria-hidden="true"></div>
-    <div class="hero__inner">
-      <h1 class="hero__brand">RAHEL</h1>
-      <p class="hero__role" data-i18n="hero.role">Designer &amp; Creative Director</p>
-      <p class="hero__tag" data-i18n="hero.tag">전문직을 위한 브랜딩과 웹 기획 — 데이터를 근거로 신뢰를 디자인합니다.</p>
-      <div class="hero__cta">
-        <a class="btn btn--big" href="./work.html" data-i18n="hero.cta1">작업 보기</a>
-        <a class="btn btn--big btn--dark" href="./contact.html" data-i18n="hero.cta2">프로젝트 문의</a>
-      </div>
-    </div>
-    <div class="scroll-hint" aria-hidden="true">
-      <span data-i18n="hero.scroll">Scroll</span>
-      <span class="dot"></span>
-    </div>
-  </section>
-
-  <!-- ===== INTRO ===== -->
-  <section class="section">
+  <!-- ===== HEADER ===== -->
+  <section class="section" style="padding-top: calc(var(--nav-h) + clamp(56px,9vw,110px)); padding-bottom: clamp(24px,4vw,40px)">
     <div class="container">
       <div class="head reveal">
-        <span class="eyebrow" data-i18n="home.introKicker">Rahel Studio</span>
-        <h2 data-i18n="home.introTitle">브랜드의 첫인상을, 데이터로 설계합니다.</h2>
-        <p class="lead" data-i18n="home.introBody">감으로 예쁘게 만드는 디자인이 아니라, 시장·고객·경쟁을 읽고 근거 위에 쌓아 올리는 브랜딩과 웹 기획.</p>
+        <span class="eyebrow" data-i18n="workpage.kicker">Portfolio</span>
+        <h2 data-i18n="workpage.title">선택된 작업</h2>
+        <p class="lead" data-i18n="workpage.intro">브랜드 아이덴티티, 웹 디자인, 에디토리얼 — 전문직 고객의 신뢰를 만드는 세 가지 방식입니다.</p>
       </div>
     </div>
   </section>
 
-  <!-- ===== WORK PREVIEW ===== -->
-  <section class="section section--alt">
+  <!-- ===== WORKS ===== -->
+  <section class="section" style="padding-top:0">
     <div class="container">
-      <div class="head head--center reveal">
-        <span class="eyebrow" data-i18n="home.workKicker">Selected Work</span>
-        <h2 data-i18n="home.workTitle">세 가지 축으로 일합니다</h2>
-      </div>
+      <div class="works">
 
-      <div class="preview-grid">
-        <a class="pcard reveal" data-delay="1" href="./work.html">
+        <!-- WORK 01 — Brand Identity -->
+        <article class="work reveal">
+          <div class="work__meta">
+            <span class="num" data-i18n="work.01.num">Work 01</span>
+            <h3 data-i18n="work.01.title">Brand Identity</h3>
+            <p data-i18n="work.01.desc">로고, 컬러, 타이포그래피, 톤앤매너까지. 하나의 원칙에서 출발해 어디에 놓여도 흔들리지 않는 아이덴티티 시스템을 만듭니다.</p>
+            <div class="work__tags">
+              <span data-i18n="work.01.t1">로고 시스템</span>
+              <span data-i18n="work.01.t2">브랜드 가이드</span>
+              <span data-i18n="work.01.t3">네이밍</span>
+            </div>
+            <div class="work__more">
+              <a class="link-arrow" href="./contact.html"><span data-i18n="work.more">케이스 자세히</span> <span class="arw">→</span></a>
+            </div>
+          </div>
           <div class="cover cover--brand">
             <div class="grid-dots" aria-hidden="true"></div>
             <div class="mono">R</div>
           </div>
-          <div class="pcard__label">
-            <span class="num" data-i18n="work.01.num">Work 01</span>
-            <h3 data-i18n="work.01.title">Brand Identity</h3>
-          </div>
-        </a>
+        </article>
 
-        <a class="pcard reveal" data-delay="2" href="./work.html">
+        <!-- WORK 02 — Web Design -->
+        <article class="work reveal">
+          <div class="work__meta">
+            <span class="num" data-i18n="work.02.num">Work 02</span>
+            <h3 data-i18n="work.02.title">Web Design</h3>
+            <p data-i18n="work.02.desc">전환을 목표로 설계하는 웹사이트. 방문자가 무엇을 보고, 어디서 신뢰하고, 언제 연락하는지 데이터로 설계합니다.</p>
+            <div class="work__tags">
+              <span data-i18n="work.02.t1">UX 설계</span>
+              <span data-i18n="work.02.t2">반응형</span>
+              <span data-i18n="work.02.t3">랜딩페이지</span>
+            </div>
+            <div class="work__more">
+              <a class="link-arrow" href="./contact.html"><span data-i18n="work.more">케이스 자세히</span> <span class="arw">→</span></a>
+            </div>
+          </div>
           <div class="cover cover--web">
             <div class="browser" aria-hidden="true">
               <div class="bar"><i></i><i></i><i></i></div>
@@ -96,13 +95,23 @@
               </div>
             </div>
           </div>
-          <div class="pcard__label">
-            <span class="num" data-i18n="work.02.num">Work 02</span>
-            <h3 data-i18n="work.02.title">Web Design</h3>
-          </div>
-        </a>
+        </article>
 
-        <a class="pcard reveal" data-delay="3" href="./work.html">
+        <!-- WORK 03 — Editorial -->
+        <article class="work reveal">
+          <div class="work__meta">
+            <span class="num" data-i18n="work.03.num">Work 03</span>
+            <h3 data-i18n="work.03.title">Editorial</h3>
+            <p data-i18n="work.03.desc">브로슈어, 회사소개서, 리포트. 읽는 순간 전문성이 전해지도록 정보를 위계로 정돈하는 편집 디자인입니다.</p>
+            <div class="work__tags">
+              <span data-i18n="work.03.t1">브로슈어</span>
+              <span data-i18n="work.03.t2">회사소개서</span>
+              <span data-i18n="work.03.t3">타이포그래피</span>
+            </div>
+            <div class="work__more">
+              <a class="link-arrow" href="./contact.html"><span data-i18n="work.more">케이스 자세히</span> <span class="arw">→</span></a>
+            </div>
+          </div>
           <div class="cover cover--editorial">
             <div class="left">
               <span class="kicker">Editorial</span>
@@ -111,21 +120,14 @@
             </div>
             <div class="right" aria-hidden="true"></div>
           </div>
-          <div class="pcard__label">
-            <span class="num" data-i18n="work.03.num">Work 03</span>
-            <h3 data-i18n="work.03.title">Editorial</h3>
-          </div>
-        </a>
-      </div>
+        </article>
 
-      <div style="text-align:center; margin-top:48px" class="reveal">
-        <a class="link-arrow" href="./work.html"><span data-i18n="home.workLink">전체 작업 보기</span> <span class="arw">→</span></a>
       </div>
     </div>
   </section>
 
   <!-- ===== CTA ===== -->
-  <section class="section">
+  <section class="section" style="padding-top:0">
     <div class="container">
       <div class="cta reveal">
         <div class="cta__glow" aria-hidden="true"></div>
