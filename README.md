@@ -21,14 +21,17 @@ deploy-ready structure around it.
 ## Structure
 
 ```
-index.html  works.html  about.html  contact.html
+index.html  works.html  about.html  contact.html  404.html
 assets/
-  rahel.css      shared design system + responsive + mobile menu
-  rahel.js       reveal · 3D pointer · KO/EN toggle (persisted) · mobile menu · contact form
-  favicon.svg    brand favicon
-  og-image.png   1200×630 social share image
-img/             real case-study images go here (WORK 01–03 are CSS artwork for now)
-robots.txt  sitemap.xml  vercel.json
+  rahel.css            shared design system + responsive + mobile menu
+  rahel.js             reveal · 3D pointer · KO/EN toggle (persisted) · mobile menu · contact form
+  favicon.svg          brand favicon (modern browsers)
+  favicon-32.png       PNG favicon fallback
+  apple-touch-icon.png iOS home-screen icon (180×180)
+  icon-192.png icon-512.png   PWA / manifest icons
+  og-image.png         1200×630 social share image
+img/                   real case-study images go here (WORK 01–03 are CSS artwork for now)
+site.webmanifest  robots.txt  sitemap.xml  vercel.json
 ```
 
 The CSS/JS are shared across all four pages — edit once, applies everywhere.
@@ -71,15 +74,20 @@ real domain, and (optionally) add a matching `<link rel="canonical">` and absolu
 
 ## Contact form
 
-The form opens the visitor's mail app pre-filled (`mailto:`). For reliable
-inquiry collection without a backend, connect it to a service such as
-[Formspree](https://formspree.io): point the form's action/endpoint at your form
-ID. The mailto flow stays as a no-JS fallback.
+By default the form opens the visitor's mail app pre-filled (`mailto:`). To
+collect inquiries reliably without a backend, sign up at
+[Formspree](https://formspree.io), create a form, and paste its URL into the
+`data-endpoint` attribute of `<form id="rs-contact-form">` in `contact.html`
+(e.g. `data-endpoint="https://formspree.io/f/XXXX"`). The form then submits in
+the background with a success/error toast; leaving it empty keeps the mailto
+fallback. No code changes needed.
 
 ## Notes
 
-- Fully responsive; verified at 375 / 430 / 768 / 1440 / 1920 px.
+- Fully responsive; verified at 375 / 430 / 768 / 1440 / 1920 px (zero horizontal overflow).
 - Accessibility: skip link, keyboard focus rings, labelled controls, `prefers-reduced-motion` respected.
+- SEO/social: per-page `<title>`/description, Open Graph + Twitter cards, JSON-LD
+  (`ProfessionalService`), `site.webmanifest`, and a branded `404.html`.
 - WORK 01–03 visuals are temporary CSS artwork, ready to be replaced by real case studies.
 - An earlier unrelated "천국의 정원 · 강아지의 방" 3D prototype lived in this repo; it's
   removed from the working tree but preserved in git history (commit `595feb4`).
