@@ -12,6 +12,9 @@
 <meta property="og:title" content="Contact — RAHEL STUDIO">
 <meta property="og:description" content="For branding, professional-service websites, and redesign projects. Tell us your field, challenge, and timeline.">
 <meta property="og:image" content="assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="RAHEL STUDIO — Strategy, Branding, Web Design">
 <meta property="og:locale" content="ko_KR">
 <meta property="og:locale:alternate" content="en_US">
 <meta name="twitter:card" content="summary_large_image">
@@ -19,9 +22,24 @@
 <meta name="twitter:description" content="For branding, professional-service websites, and redesign projects. Tell us your field, challenge, and timeline.">
 <meta name="twitter:image" content="assets/og-image.png">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-<link rel="apple-touch-icon" href="assets/favicon.svg">
+<link rel="icon" href="assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<link rel="manifest" href="site.webmanifest">
 <link rel="stylesheet" href="assets/rahel.css">
 <script src="assets/rahel.js" defer></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "RAHEL STUDIO",
+  "description": "Strategy, branding, and web design for professionals.",
+  "areaServed": "KR",
+  "serviceType": ["Brand Identity", "Web Design", "Editorial Design"],
+  "knowsLanguage": ["ko", "en"],
+  "email": "eunakim1984@gmail.com",
+  "address": { "@type": "PostalAddress", "addressLocality": "Seoul", "addressCountry": "KR" }
+}
+</script>
 </head>
 <body>
 <a class="rs-skip" href="#main">Skip to content</a>
@@ -60,7 +78,9 @@
       </div>
     </div>
     <div class="rs-contact-card rs-reveal">
-      <form id="rs-contact-form" data-email="eunakim1984@gmail.com">
+      <!-- To collect inquiries without a backend, set data-endpoint to a Formspree URL
+           (e.g. https://formspree.io/f/XXXX). Empty = opens the visitor's mail app. -->
+      <form id="rs-contact-form" data-email="eunakim1984@gmail.com" data-endpoint="">
         <div class="rs-field"><label for="name" data-ko="이름 / 회사" data-en="Name / Company">이름 / 회사</label><input id="name" class="rs-input" name="name" required></div>
         <div class="rs-field"><label for="email">Email</label><input id="email" class="rs-input" name="email" type="email" required></div>
         <div class="rs-field"><label for="project" data-ko="프로젝트 유형" data-en="Project Type">프로젝트 유형</label><input id="project" class="rs-input" name="project" placeholder="Branding / Website / Renewal"></div>

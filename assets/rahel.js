@@ -114,16 +114,35 @@
   }
 
   if (form){
-    var target = form.getAttribute("data-email") || CONTACT_EMAIL;
+    var target   = form.getAttribute("data-email") || CONTACT_EMAIL;
+    // Optional: paste a Formspree (or similar) endpoint here or on the form's
+    // data-endpoint attribute to collect inquiries without a backend.
+    var endpoint = (form.getAttribute("data-endpoint") || "").trim();
+
     form.addEventListener("submit", function(e){
       e.preventDefault();
-      if (!target || target.indexOf("YOUR_EMAIL") !== -1){
-        showToast(lang === "ko"
-          ? "이메일 주소를 먼저 설정해 주세요."
-          : "Please set a contact email first.");
+      var fd = new FormData(form);
+
+      // Path A — endpoint configured: POST in the background, no mail app needed.
+      if (endpoint){
+        showToast(lang === "ko" ? "보내는 중…" : "Sending…");
+        fetch(endpoint, { method:"POST", body:fd, headers:{ "Accept":"application/json" } })
+          .then(function(r){
+            if (!r.ok) throw new Error("bad status");
+            form.reset();
+            showToast(lang === "ko" ? "문의가 전송되었습니다. 감사합니다!" : "Thanks — your inquiry has been sent!");
+          })
+          .catch(function(){
+            showToast(lang === "ko" ? "전송에 실패했어요. 잠시 후 다시 시도해 주세요." : "Couldn't send. Please try again shortly.");
+          });
         return;
       }
-      var fd = new FormData(form);
+
+      // Path B — fallback: open the visitor's mail app pre-filled.
+      if (!target || target.indexOf("YOUR_EMAIL") !== -1){
+        showToast(lang === "ko" ? "이메일 주소를 먼저 설정해 주세요." : "Please set a contact email first.");
+        return;
+      }
       var subject = encodeURIComponent("[Rahel Studio] " + (fd.get("name") || "New inquiry"));
       var body = encodeURIComponent(
         "Name: "    + (fd.get("name")    || "") + "\n" +
