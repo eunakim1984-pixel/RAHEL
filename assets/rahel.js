@@ -42,6 +42,22 @@
     }
   }
 
+  /* ---------- Profile card flip ---------- */
+  var flipCard = $(".rs-card-3d");
+  if (flipCard){
+    var toggleFlip = function(){
+      flipCard.classList.toggle("flipped");
+    };
+    flipCard.addEventListener("click", function(e){
+      if (e.target.closest("a")) return;            // let the portfolio link navigate
+      if (e.target.closest(".rs-flip-btn")) return; // buttons handle their own click
+      toggleFlip();
+    });
+    $$(".rs-flip-btn", flipCard).forEach(function(b){
+      b.addEventListener("click", function(e){ e.stopPropagation(); toggleFlip(); });
+    });
+  }
+
   /* ---------- Language toggle (KO/EN), persisted across pages ---------- */
   var STORAGE_KEY = "rahel-lang";
   var lang = "ko";
