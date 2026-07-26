@@ -12,6 +12,20 @@
   var $  = function(s, c){ return (c||document).querySelector(s); };
   var $$ = function(s, c){ return Array.prototype.slice.call((c||document).querySelectorAll(s)); };
 
+  /* ---------- Ambient roaming orb + persistent CTA (all pages) ---------- */
+  (function(){
+    if (document.querySelector(".rs-fab")) return;
+    var roam = document.createElement("div");
+    roam.className = "rs-roam";
+    roam.setAttribute("aria-hidden", "true");
+    var fab = document.createElement("a");
+    fab.className = "rs-fab";
+    fab.href = "contact.html";
+    fab.innerHTML = '<span data-ko="프로젝트 문의" data-en="Start a project">프로젝트 문의</span> ↗';
+    document.body.appendChild(roam);
+    document.body.appendChild(fab);
+  })();
+
   /* ---------- Reveal on scroll ---------- */
   var els = $$(".rs-reveal");
   if ("IntersectionObserver" in window) {
