@@ -1,0 +1,15 @@
+{
+  "name": "RAHEL STUDIO",
+  "short_name": "RAHEL",
+  "description": "Strategy · Branding · Web Design for professionals.",
+  "lang": "ko",
+  "start_url": "/index.html",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#ffffff",
+  "icons": [
+    { "src": "/assets/favicon.svg", "type": "image/svg+xml", "sizes": "any", "purpose": "any" },
+    { "src": "/assets/icon-192.png", "type": "image/png", "sizes": "192x192" },
+    { "src": "/assets/icon-512.png", "type": "image/png", "sizes": "512x512" }
+  ]
+}
