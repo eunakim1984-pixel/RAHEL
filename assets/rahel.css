@@ -603,3 +603,35 @@ textarea.rs-input{min-height:145px;resize:vertical}
   .rs-chat-modal{padding:26px 20px;border-radius:22px}
   .rs-chat-opts{grid-template-columns:1fr}
 }
+
+/* ==========================================================================
+   SPACING PASS — 더 넉넉한 자간(letter-spacing)과 행간(line-height)
+   촘촘하던 한글 제목·본문에 숨통을 틔웁니다. (컬러/레이아웃은 그대로)
+   ========================================================================== */
+h1,h2,h3,h4{text-wrap:balance}
+/* Display headings: relax tight tracking, open line-height */
+.rs-section-head h2,.rs-display{letter-spacing:-.03em;line-height:1.08}
+.rs-page-hero h1{letter-spacing:-.045em;line-height:1.0}
+.rs-case-copy h2{letter-spacing:-.035em;line-height:1.1}
+.rs-project-title h3{letter-spacing:-.03em;line-height:1.06}
+.rs-banner h2{letter-spacing:-.04em;line-height:1.02}
+.rs-contact-copy h1{letter-spacing:-.045em;line-height:1.0}
+.rs-about-sticky h1{letter-spacing:-.03em}
+.rs-philosophy h3{letter-spacing:-.02em;line-height:1.22}
+.rs-step h3{letter-spacing:-.02em;line-height:1.3}
+.rs-post h3{letter-spacing:-.02em;line-height:1.45}
+.rs-back-lead{line-height:1.3}
+/* Body text: more line-height for readability */
+.rs-lead{line-height:1.62}
+.rs-page-hero p{line-height:1.62}
+.rs-section-head p{line-height:1.78}
+.rs-project-title p{line-height:1.62}
+.rs-case-copy p,.rs-case-kv .v{line-height:1.85}
+.rs-philosophy p{line-height:1.9}
+.rs-step p{line-height:1.72}
+.rs-about-copy p{line-height:2}
+.rs-about-copy .statement{letter-spacing:-.02em;line-height:1.32}
+.rs-fact{line-height:1.6}
+.rs-banner p{line-height:1.72}
+.rs-contact-copy p{line-height:1.8}
+.rs-chat-opt{line-height:1.4}
