@@ -57,11 +57,11 @@ button{color:inherit}
 }
 .rs-cta{
   display:inline-flex;align-items:center;gap:8px;border-radius:999px;
-  padding:12px 20px;background:var(--blue);color:#fff;font-size:14px;font-weight:760;letter-spacing:-.01em;
-  box-shadow:0 6px 18px rgba(0,113,227,.35);
+  padding:12px 20px;background:#111;color:#fff;font-size:14px;font-weight:760;letter-spacing:-.01em;
+  box-shadow:0 6px 18px rgba(0,0,0,.18);
   transition:transform .2s ease,background .2s ease,box-shadow .2s ease
 }
-.rs-cta:hover{transform:translateY(-1px);background:#0063c6;box-shadow:0 10px 26px rgba(0,113,227,.45)}
+.rs-cta:hover{transform:translateY(-1px);background:#2b2b2f;box-shadow:0 10px 26px rgba(0,0,0,.26)}
 .rs-main{padding-top:64px}
 .rs-container{width:min(calc(100% - 48px),var(--max));margin:0 auto}
 .rs-eyebrow{
@@ -505,7 +505,7 @@ textarea.rs-input{min-height:145px;resize:vertical}
 .rs-fab{
   position:fixed;z-index:120;bottom:24px;right:max(20px,calc((100vw - var(--max))/2));
   display:inline-flex;align-items:center;gap:9px;
-  background:var(--blue);color:#fff;border-radius:999px;
+  background:var(--blue);color:#fff;border:0;border-radius:999px;cursor:pointer;font-family:inherit;
   padding:16px 24px;font-size:15px;font-weight:770;letter-spacing:-.01em;
   box-shadow:0 14px 34px rgba(0,113,227,.45);
   transition:transform .2s ease,background .2s ease,box-shadow .2s ease;
@@ -518,9 +518,88 @@ textarea.rs-input{min-height:145px;resize:vertical}
   .rs-roam{width:min(70vw,360px);opacity:.72}
 }
 /* Card credential badges */
+/* Contact — service checkboxes */
+.rs-field-group{margin-bottom:18px}
+.rs-field-legend{font-size:11px;font-weight:700;letter-spacing:.08em;color:var(--faint);margin-bottom:8px;text-transform:uppercase}
+.rs-svc{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.rs-svc label{display:flex;align-items:center;gap:9px;padding:11px 13px;border:1px solid rgba(0,0,0,.09);border-radius:14px;background:#fff;cursor:pointer;font-size:13px;transition:border .15s ease,background .15s ease}
+.rs-svc label:hover{border-color:rgba(0,113,227,.4)}
+.rs-svc input{width:17px;height:17px;accent-color:var(--blue);flex:0 0 auto}
+.rs-svc label:has(input:checked){border-color:var(--blue);background:rgba(0,113,227,.06)}
+
+/* Insight / blog list cards */
+.rs-post-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.rs-post{display:flex;flex-direction:column;gap:14px;background:var(--soft);border:1px solid rgba(0,0,0,.04);border-radius:var(--radius);padding:30px;min-height:240px;transition:transform .35s cubic-bezier(.2,.8,.2,1),box-shadow .35s ease}
+.rs-post:hover{transform:translateY(-6px);box-shadow:var(--shadow)}
+.rs-post .cat{font-size:11px;font-weight:760;letter-spacing:.1em;text-transform:uppercase;color:var(--faint)}
+.rs-post h3{margin:0;font-size:21px;line-height:1.32;letter-spacing:-.03em;flex:1}
+.rs-post .status{align-self:flex-start;font-size:11px;font-weight:700;border:1px solid var(--line);border-radius:999px;padding:5px 11px;color:#66666b}
+@media (max-width:980px){ .rs-post-grid{grid-template-columns:1fr 1fr} }
+@media (max-width:640px){ .rs-post-grid{grid-template-columns:1fr} }
+
+/* Case-study Problem/Strategy rows */
+.rs-case-kv{margin:20px 0 0;display:grid;gap:12px}
+.rs-case-kv .row{display:grid;grid-template-columns:96px 1fr;gap:14px;align-items:start}
+.rs-case-kv .k{font-size:11px;font-weight:760;letter-spacing:.08em;text-transform:uppercase;color:var(--faint);padding-top:3px}
+.rs-case-kv .v{margin:0;font-size:14px;line-height:1.7;color:#57575c}
+.rs-chip.is-concept{border-color:rgba(0,113,227,.4);color:var(--blue);background:rgba(0,113,227,.06);font-weight:700}
+@media (max-width:640px){ .rs-case-kv .row{grid-template-columns:76px 1fr;gap:10px} }
+
 .rs-cred-wrap{display:flex;flex-direction:column;gap:10px;align-items:flex-start}
 .rs-chip-badge{
   display:inline-flex;align-items:center;border:1px solid rgba(0,0,0,.16);
   border-radius:999px;padding:5px 12px;font-size:10.5px;font-weight:650;
   color:#4a4a50;letter-spacing:.02em;white-space:nowrap
+}
+
+/* ==========================================================================
+   LIVE CHAT — FAB "live" dot, rolling metallic bead, consultation modal
+   ========================================================================== */
+.rs-fab-dot{width:8px;height:8px;border-radius:50%;background:#37e0a6;box-shadow:0 0 0 3px rgba(55,224,166,.28);flex:0 0 auto}
+.rs-fab-bead{display:none}
+@supports (offset-path: border-box){
+  .rs-fab-bead{
+    display:block;position:absolute;width:14px;height:14px;border-radius:50%;
+    offset-path:border-box;offset-distance:0%;offset-anchor:center;
+    background:radial-gradient(circle at 35% 30%,#ffffff 0 12%,#eef1f5 28%,#aab2bc 58%,#5b636c 100%);
+    box-shadow:0 0 7px rgba(255,255,255,.85),0 1px 3px rgba(0,0,0,.45);
+    animation:rsBead 3.4s linear infinite;pointer-events:none;
+  }
+}
+@keyframes rsBead{to{offset-distance:100%}}
+
+.rs-chat-backdrop{
+  position:fixed;inset:0;z-index:300;display:flex;align-items:center;justify-content:center;padding:20px;
+  background:rgba(10,12,18,.5);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);
+  opacity:0;pointer-events:none;transition:opacity .25s ease;
+}
+.rs-chat-backdrop.open{opacity:1;pointer-events:auto}
+.rs-chat-modal{
+  position:relative;width:min(560px,100%);max-height:min(88vh,780px);overflow:auto;
+  background:#fff;color:var(--ink);border-radius:28px;padding:34px;
+  box-shadow:0 40px 120px rgba(0,0,0,.35);
+  transform:translateY(16px) scale(.985);transition:transform .3s cubic-bezier(.2,.8,.2,1);
+}
+.rs-chat-backdrop.open .rs-chat-modal{transform:none}
+.rs-chat-close{position:absolute;top:18px;right:18px;width:38px;height:38px;border:0;background:var(--soft);border-radius:50%;font-size:20px;line-height:1;cursor:pointer;color:#333}
+.rs-chat-close:hover{background:#ececf0}
+.rs-chat-h{margin:8px 0 8px;font-size:clamp(26px,3.2vw,38px);letter-spacing:-.04em;line-height:1.02}
+.rs-chat-lead{margin:0 0 22px;color:var(--muted);font-size:14px;line-height:1.6}
+.rs-chat-group{margin:0 0 22px}
+.rs-chat-legend{font-size:14px;font-weight:760;letter-spacing:-.02em;margin-bottom:12px;display:flex;align-items:baseline;gap:8px}
+.rs-chat-legend em{font-style:normal;font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--faint)}
+.rs-chat-sub{font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--faint);margin:14px 0 8px}
+.rs-chat-sub:first-child{margin-top:0}
+.rs-chat-opts{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.rs-chat-opts--mood{grid-template-columns:1fr}
+.rs-chat-opt{display:flex;align-items:center;gap:10px;padding:11px 13px;border:1px solid rgba(0,0,0,.10);border-radius:14px;cursor:pointer;font-size:13px;transition:border .15s ease,background .15s ease}
+.rs-chat-opt:hover{border-color:rgba(0,113,227,.4)}
+.rs-chat-opt input{width:17px;height:17px;accent-color:var(--blue);flex:0 0 auto}
+.rs-chat-opt small{margin-left:auto;color:var(--faint);font-size:11px}
+.rs-chat-opt:has(input:checked){border-color:var(--blue);background:rgba(0,113,227,.06)}
+.rs-chat-modal .rs-submit{margin-top:6px}
+.rs-chat-note{font-size:11px;line-height:1.6;color:var(--faint);margin:12px 0 0}
+@media (max-width:560px){
+  .rs-chat-modal{padding:26px 20px;border-radius:22px}
+  .rs-chat-opts{grid-template-columns:1fr}
 }
