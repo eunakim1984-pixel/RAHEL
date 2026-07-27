@@ -17,6 +17,9 @@
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="assets/favicon-32.png" sizes="32x32" type="image/png">
 <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<!-- Reuse the existing site behaviour for the flip card, roaming orb, silver bead and live-chat modal -->
+<link rel="stylesheet" href="assets/rahel.css?v=20260726-1900">
+<script src="assets/rahel.js?v=20260726-1900" defer></script>
 <style>
   * { box-sizing: border-box; }
   html { scroll-behavior: smooth; }
@@ -28,9 +31,19 @@
   @keyframes rahelUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: none; } }
   @keyframes rahelScroll { 0% { transform: translateY(0); opacity: 0; } 30% { opacity: 1; } 100% { transform: translateY(14px); opacity: 0; } }
   @keyframes rahelFloat { 0%,100% { transform: translate(0,0); } 50% { transform: translate(2%,-3%); } }
-  @media (max-width: 760px){
+  /* --- Mobile responsive optimization --- */
+  @media (max-width: 900px){
     .rahel-nav{ display: none !important; }
-    .rahel-head-grid{ grid-template-columns: 1fr !important; align-items: start !important; }
+    .rahel-head-grid{ grid-template-columns: 1fr !important; align-items: start !important; gap: 22px !important; }
+  }
+  @media (max-width: 560px){
+    /* Full-width, easy-to-tap hero buttons */
+    .rahel-hero-cta{ gap: 12px !important; }
+    .rahel-hero-cta > a{ flex: 1 1 100%; justify-content: center; }
+  }
+  @media (max-width: 380px){
+    /* Prevent the long 3-line headline from crowding on very small phones */
+    #top h1{ font-size: clamp(28px, 8vw, 34px) !important; }
   }
 </style>
 </head>
@@ -54,7 +67,6 @@
       </nav>
       <div style="display: flex; align-items: center; gap: 18px;">
         <span style="font-size: 12px; letter-spacing: 0.18em; color: #9aa0ab; font-weight: 700;">EN</span>
-        <a href="#contact" style="display: inline-flex; align-items: center; gap: 7px; background: linear-gradient(180deg,#3a76f2,#2f6bef); color: #fff; font-size: 13.5px; font-weight: 600; padding: 11px 20px; border-radius: 999px; box-shadow: 0 6px 16px -6px rgba(47,107,239,0.6); transition: transform .2s, box-shadow .2s;" style-hover="transform: translateY(-1px); box-shadow: 0 10px 22px -8px rgba(47,107,239,0.7);">프로젝트 상담하기 <span style="font-size: 12px;">↗</span></a>
       </div>
     </div>
   </header>
@@ -75,52 +87,47 @@
         <p style="margin: clamp(26px, 4vh, 42px) 0 0; max-width: 560px; font-size: clamp(15px, 1.5vw, 18px); line-height: 1.78; color: #4c515b; animation: rahelUp .8s ease .12s both;">
           세무사 · 노무사 · 회계사 · 의료·병원 · 학원·강사 등 전문가의 경험과 강점을 분석해, 고객이 이해하고 신뢰할 수 있는 웹사이트로 설계합니다.
         </p>
-        <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 14px; margin-top: clamp(30px, 4vh, 48px); animation: rahelUp .8s ease .2s both;">
+        <div class="rahel-hero-cta" style="display: flex; flex-wrap: wrap; align-items: center; gap: 14px; margin-top: clamp(30px, 4vh, 48px); animation: rahelUp .8s ease .2s both;">
           <a href="#contact" style="display: inline-flex; align-items: center; gap: 10px; background: linear-gradient(180deg,#3a76f2,#2f6bef); color: #fff; font-size: 15px; font-weight: 600; padding: 15px 28px; border-radius: 999px; box-shadow: 0 8px 20px -8px rgba(47,107,239,0.6); transition: transform .2s, box-shadow .2s;" style-hover="transform: translateY(-2px); box-shadow: 0 12px 26px -8px rgba(47,107,239,0.7);">전문직 웹사이트 상담 <span>→</span></a>
           <a href="#works" style="display: inline-flex; align-items: center; gap: 9px; border: 1px solid #d6dae1; color: #16181d; font-size: 15px; font-weight: 600; padding: 15px 28px; border-radius: 999px; transition: border-color .2s, background .2s;" style-hover="border-color: #2f6bef; background: #f6f9ff;">포트폴리오 보기 <span style="font-size: 13px;">↗</span></a>
         </div>
       </div>
 
-      <!-- glass identity / flip card -->
-      <div style="position: relative; width: 100%; max-width: 440px; animation: rahelUp .9s ease .25s both; perspective: 1500px;">
-        <div style="position: absolute; left: -12%; bottom: -6%; width: 62%; height: 55%; background: radial-gradient(circle, rgba(120,165,255,0.45), transparent 68%); filter: blur(20px); z-index: 0; pointer-events: none;"></div>
-        <div id="rahel-card-front">
-          <div style="position: relative; overflow: hidden; border-radius: 30px; padding: clamp(26px, 2.4vw, 34px); min-height: 400px; display: flex; flex-direction: column; transform: rotateY(-11deg) rotateX(4deg) rotate(-1deg); transform-origin: 60% 50%; transition: transform .7s cubic-bezier(.2,.7,.2,1), box-shadow .7s; background: radial-gradient(120% 85% at 18% 12%, rgba(150,190,255,0.42), transparent 55%), radial-gradient(95% 75% at 98% 62%, rgba(120,165,255,0.5), transparent 60%), radial-gradient(42% 34% at 52% 58%, rgba(180,205,255,0.6), transparent 72%), conic-gradient(from 205deg at 52% 60%, rgba(255,255,255,0) 0deg, rgba(130,175,255,0.34) 42deg, rgba(255,255,255,0) 112deg, rgba(150,190,255,0.3) 205deg, rgba(255,255,255,0) 300deg, rgba(255,255,255,0) 360deg), linear-gradient(150deg, #ffffff 0%, #eef3fe 100%); backdrop-filter: blur(22px); border: 1px solid rgba(255,255,255,0.85); box-shadow: 0 44px 90px -36px rgba(58,102,200,0.55), inset 0 1px 1px rgba(255,255,255,0.95);" style-hover="transform: rotateY(0deg) rotateX(0deg) rotate(0deg); box-shadow: 0 40px 80px -34px rgba(58,102,200,0.5);">
-            <div style="display: flex; justify-content: space-between; align-items: flex-start;">
-              <div style="font-weight: 700; font-size: 14.5px; letter-spacing: 0.06em; color: #454a54;">RAHEL STUDIO</div>
-              <div style="font-weight: 700; font-size: 14px; letter-spacing: 0.08em; color: #454a54;">SEOUL / 2026</div>
-            </div>
-            <div style="margin: auto 0;">
-              <div style="font-size: clamp(46px, 5vw, 68px); font-weight: 800; letter-spacing: -0.04em; line-height: 1; background: linear-gradient(160deg,#15171c 0%,#4b515c 62%,#9aa0ab 100%); -webkit-background-clip: text; background-clip: text; color: transparent;">Rahel</div>
-              <div style="margin-top: 16px; font-size: 17px; font-weight: 500; color: #565a63;">웹사이트 전략 · 디자인</div>
-            </div>
-            <div>
-              <div style="font-size: 14.5px; line-height: 1.65; color: #565a63; margin-bottom: 20px;">디자인 전공<br>10년+ 웹사이트 품질 평가</div>
-              <div style="display: flex; flex-wrap: wrap; gap: 10px;">
-                <a href="#contact" style="border: 1px solid rgba(20,30,60,0.18); border-radius: 999px; padding: 11px 18px; font-size: 13.5px; font-weight: 600; color: #16181d; background: rgba(255,255,255,0.5); transition: border-color .2s, background .2s;" style-hover="border-color: #2f6bef; background: #fff;">전문직 웹사이트 제작</a>
-                <button type="button" onclick="rahelFlip()" style="border: 1px solid rgba(20,30,60,0.18); border-radius: 999px; padding: 11px 18px; font-size: 13.5px; font-weight: 600; color: #16181d; background: rgba(255,255,255,0.5); cursor: pointer; font-family: inherit; display: inline-flex; align-items: center; gap: 7px; transition: border-color .2s, background .2s;" style-hover="border-color: #2f6bef; background: #fff;">전문 분야 <span>⟳</span></button>
+      <!-- glass identity / flip card (이전 디자인·이전 사이즈 그대로) -->
+      <div class="rs-hero-art">
+        <div class="rs-orbit" aria-hidden="true"></div>
+        <div class="rs-card-3d" id="rs-profile-card">
+          <div class="rs-card-inner">
+            <div class="rs-card-face rs-card-front">
+              <div class="rs-card-content">
+                <div class="rs-card-top"><span>RAHEL STUDIO</span><span>SEOUL / 2026</span></div>
+                <div>
+                  <div class="rs-signature">Rahel</div>
+                  <div class="rs-role" data-ko="웹사이트 전략 · 디자인" data-en="Website Strategy · Design">웹사이트 전략 · 디자인</div>
+                </div>
+                <div class="rs-card-bottom">
+                  <div class="rs-cred-wrap">
+                    <span class="rs-cred" data-ko="항공운항과 / 디자인 학사 졸업<br>외국계 기업 10년 웹사이트 평가 및 AI 정확도 검수" data-en="Aviation Operations / B.A. in Design<br>10 yrs website evaluation &amp; AI accuracy QA at global firms">항공운항과 / 디자인 학사 졸업<br>외국계 기업 10년 웹사이트 평가 및 AI 정확도 검수</span>
+                    <span class="rs-chip-badge" data-ko="영어 상담 가능" data-en="English consultation available">영어 상담 가능</span>
+                  </div>
+                  <button class="rs-flip-btn" type="button" aria-label="프로필 카드 뒤집기"><span data-ko="프로필 Click" data-en="Profile Click">프로필 Click</span> ⟳</button>
+                </div>
               </div>
             </div>
-          </div>
-        </div>
-        <div id="rahel-card-back" style="display: none;">
-          <div style="position: relative; overflow: hidden; border-radius: 30px; padding: clamp(26px, 2.4vw, 34px); min-height: 400px; display: flex; flex-direction: column; justify-content: space-between; transform: rotateY(-11deg) rotateX(4deg) rotate(-1deg); transform-origin: 60% 50%; transition: transform .7s cubic-bezier(.2,.7,.2,1), box-shadow .7s; background: radial-gradient(95% 70% at 90% 12%, rgba(90,140,255,0.35), transparent 58%), linear-gradient(150deg, #1b2333 0%, #10151f 100%); border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 44px 90px -36px rgba(20,30,60,0.6); color: #fff;" style-hover="transform: rotateY(0deg) rotateX(0deg) rotate(0deg);">
-            <div style="display: flex; justify-content: space-between; align-items: center;">
-              <span style="font-size: 11px; letter-spacing: 0.24em; color: #8f97a8; font-weight: 700;">PROFESSIONAL FIELDS</span>
-              <button type="button" onclick="rahelFlip()" style="background: transparent; border: 1px solid rgba(255,255,255,0.2); color: #fff; border-radius: 999px; padding: 7px 14px; font-size: 12.5px; cursor: pointer; font-family: inherit;">뒤로 ⟲</button>
-            </div>
-            <div>
-              <div style="font-size: clamp(21px, 2vw, 26px); font-weight: 700; line-height: 1.4; letter-spacing: -0.02em; margin-bottom: 20px;">전문직 · 전문가<br>프로필 웹사이트</div>
-              <div style="display: flex; flex-wrap: wrap; gap: 9px;">
-                <span style="border: 1px solid rgba(255,255,255,0.16); border-radius: 999px; padding: 8px 15px; font-size: 13px; color: #d3d7df;">세무사</span>
-                <span style="border: 1px solid rgba(255,255,255,0.16); border-radius: 999px; padding: 8px 15px; font-size: 13px; color: #d3d7df;">노무사</span>
-                <span style="border: 1px solid rgba(255,255,255,0.16); border-radius: 999px; padding: 8px 15px; font-size: 13px; color: #d3d7df;">회계사</span>
-                <span style="border: 1px solid rgba(255,255,255,0.16); border-radius: 999px; padding: 8px 15px; font-size: 13px; color: #d3d7df;">의료·병원</span>
-                <span style="border: 1px solid rgba(255,255,255,0.16); border-radius: 999px; padding: 8px 15px; font-size: 13px; color: #d3d7df;">학원·강사</span>
-                <span style="border: 1px solid rgba(255,255,255,0.16); border-radius: 999px; padding: 8px 15px; font-size: 13px; color: #d3d7df;">개인 전문가</span>
+            <div class="rs-card-face rs-card-back">
+              <div class="rs-card-content">
+                <div class="rs-card-top">
+                  <span>PROFILE</span>
+                  <button class="rs-flip-btn rs-flip-back" type="button" aria-label="앞면으로 돌아가기"><span data-ko="뒤로" data-en="Back">뒤로</span> ⟲</button>
+                </div>
+                <div class="rs-back-body">
+                  <p class="rs-back-lead" data-ko="프로필" data-en="Profile">프로필</p>
+                  <p class="rs-back-clients" data-ko="H대학교 항공운항과 졸업<br>K대학교 디자인학사 졸업<br>TELUS, Appen, RWS 등 외국계 기업 근무<br>웹사이트 전문 평가사 경력<br>AI 오류 및 정확도 검수 경력<br>웹사이트 품질 평가 경력 10년 이상" data-en="Aviation Operations, H University<br>B.A. in Design, K University<br>Worked at global firms incl. TELUS, Appen, RWS<br>Professional website evaluator<br>AI error &amp; accuracy QA experience<br>10+ years of website quality evaluation">H대학교 항공운항과 졸업<br>K대학교 디자인학사 졸업<br>TELUS, Appen, RWS 등 외국계 기업 근무<br>웹사이트 전문 평가사 경력<br>AI 오류 및 정확도 검수 경력<br>웹사이트 품질 평가 경력 10년 이상</p>
+                  <p class="rs-back-clients" data-ko="10년 이상 웹사이트 품질을 평가해 온 경험을 바탕으로, 전문성과 검색 의도가 분명히 전달되는 홈페이지를 만듭니다." data-en="Built on 10+ years of evaluating website quality, I build homepages that clearly convey expertise and search intent.">10년 이상 웹사이트 품질을 평가해 온 경험을 바탕으로, 전문성과 검색 의도가 분명히 전달되는 홈페이지를 만듭니다.</p>
+                </div>
+                <a class="rs-back-cta" href="#contact"><span data-ko="웹사이트 상담" data-en="Website consultation">웹사이트 상담</span> →</a>
               </div>
             </div>
-            <a href="#contact" style="color: #fff; font-size: 14px; font-weight: 600; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 18px; display: flex; justify-content: space-between;">웹사이트 상담 <span>→</span></a>
           </div>
         </div>
       </div>
@@ -311,24 +318,11 @@
     </div>
   </footer>
 
-  <!-- floating chat -->
-  <a href="#contact" style="position: fixed; right: clamp(16px,3vw,32px); bottom: clamp(16px,3vw,32px); z-index: 80; display: inline-flex; align-items: center; gap: 9px; background: linear-gradient(180deg,#3a76f2,#2f6bef); color: #fff; font-size: 15px; font-weight: 700; padding: 15px 24px; border-radius: 999px; box-shadow: 0 14px 30px -10px rgba(47,107,239,0.7); transition: transform .2s;" style-hover="transform: translateY(-2px);">
-    <span style="width: 9px; height: 9px; border-radius: 50%; background: #4ade80; box-shadow: 0 0 0 3px rgba(74,222,128,0.3); display: inline-block;"></span>
-    채팅 상담
-  </a>
+  <!-- floating live-chat button + rolling silver bead + roaming orb are injected by rahel.js -->
 
 </div>
 
 <script>
-  // Flip card (front ⇄ 전문 분야)
-  function rahelFlip(){
-    var f = document.getElementById('rahel-card-front');
-    var b = document.getElementById('rahel-card-back');
-    if (!f || !b) return;
-    var showBack = f.style.display !== 'none';
-    f.style.display = showBack ? 'none' : '';
-    b.style.display = showBack ? '' : 'none';
-  }
   // Hover states (reproduce the design's style-hover values with real events)
   (function(){
     var nodes = document.querySelectorAll('[style-hover]');
