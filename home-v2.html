@@ -25,9 +25,9 @@
   html { scroll-behavior: smooth; }
   body { margin: 0; background: #ffffff; color: #16181d; font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Segoe UI", sans-serif; -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; }
   a { color: inherit; text-decoration: none; }
-  a.rahel-link { color: #2f6bef; }
-  a.rahel-link:hover { color: #1a52d0; }
-  ::selection { background: #2f6bef; color: #fff; }
+  a.rahel-link { color: #5f646c; }
+  a.rahel-link:hover { color: #24272c; }
+  ::selection { background: #5f646c; color: #fff; }
   @keyframes rahelUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: none; } }
   @keyframes rahelScroll { 0% { transform: translateY(0); opacity: 0; } 30% { opacity: 1; } 100% { transform: translateY(14px); opacity: 0; } }
   @keyframes rahelFloat { 0%,100% { transform: translate(0,0); } 50% { transform: translate(2%,-3%); } }
@@ -69,7 +69,7 @@
     left: -34%;
     width: 34%;
     pointer-events: none;
-    background: linear-gradient(90deg, transparent, rgba(255,255,255,.92), rgba(190,211,239,.5), transparent);
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,.92), rgba(226,228,231,.5), transparent);
     filter: blur(2px);
     animation: rahelSteelGleam 3.8s ease-in-out infinite;
   }
@@ -91,7 +91,7 @@
       inset 0 -1px 1px rgba(255,255,255,.72) !important;
   }
   .rahel-steel-cta:focus-visible {
-    outline: 3px solid rgba(47,107,239,.34);
+    outline: 3px solid rgba(95,100,108,.34);
     outline-offset: 4px;
   }
   @media (prefers-reduced-motion: reduce) {
@@ -122,7 +122,7 @@
   <header style="position: sticky; top: 0; z-index: 60; background: rgba(255,255,255,0.7); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border-bottom: 1px solid rgba(20,30,60,0.06);">
     <div style="max-width: 1280px; margin: 0 auto; padding: 0 clamp(20px, 5vw, 56px); height: 78px; display: flex; align-items: center; justify-content: space-between; gap: 24px;">
       <a href="#top" style="font-weight: 800; letter-spacing: -0.01em; font-size: 18px; display: flex; align-items: center; gap: 11px;">
-        <span style="width: 18px; height: 18px; border-radius: 50%; background: radial-gradient(circle at 32% 28%, #8fb6ff 0%, #2f6bef 48%, #1a44b8 100%); box-shadow: 0 3px 8px -2px rgba(47,107,239,0.6), inset 0 1px 2px rgba(255,255,255,0.7); display: inline-block;"></span>
+        <span style="width: 18px; height: 18px; border-radius: 50%; background: radial-gradient(circle at 32% 28%, #f5f6f7 0%, #5f646c 48%, #555b63 100%); box-shadow: 0 3px 8px -2px rgba(95,100,108,0.6), inset 0 1px 2px rgba(255,255,255,0.7); display: inline-block;"></span>
         RAHEL STUDIO
       </a>
       <nav class="rahel-nav" style="display: flex; align-items: center; gap: 34px; font-size: 14.5px; color: #565a63; font-weight: 500;">
@@ -140,12 +140,12 @@
 
   <!-- HERO -->
   <section id="top" style="position: relative; max-width: 1280px; margin: 0 auto; padding: clamp(52px, 8vh, 112px) clamp(20px, 5vw, 56px) clamp(40px, 6vh, 76px);">
-    <div style="position: absolute; top: -8%; right: 4%; width: clamp(360px, 46vw, 720px); height: clamp(360px, 46vw, 720px); background: radial-gradient(circle at 50% 45%, rgba(110,160,255,0.55) 0%, rgba(150,190,255,0.28) 38%, rgba(255,255,255,0) 68%); filter: blur(14px); z-index: 0; pointer-events: none; animation: rahelFloat 14s ease-in-out infinite;"></div>
+    <div style="position: absolute; top: -8%; right: 4%; width: clamp(360px, 46vw, 720px); height: clamp(360px, 46vw, 720px); background: radial-gradient(circle at 50% 45%, rgba(155,160,167,0.55) 0%, rgba(205,208,212,0.28) 38%, rgba(255,255,255,0) 68%); filter: blur(14px); z-index: 0; pointer-events: none; animation: rahelFloat 14s ease-in-out infinite;"></div>
 
     <div style="position: relative; z-index: 1; display: flex; flex-direction: column; gap: clamp(40px, 7vw, 96px);">
       <div>
         <div style="display: flex; align-items: center; gap: 14px; margin-bottom: clamp(26px, 4.5vh, 48px); animation: rahelUp .7s ease both;">
-          <span style="width: 34px; height: 1px; background: #2f6bef; display: inline-block;"></span>
+          <span style="width: 34px; height: 1px; background: #5f646c; display: inline-block;"></span>
           <span style="font-size: 12px; letter-spacing: 0.26em; font-weight: 700; color: #6b7280;">PROFESSIONAL WEBSITE STUDIO</span>
         </div>
         <h1 style="margin: 0; font-size: clamp(30px, 4.6vw, 60px); line-height: 1.32; letter-spacing: -0.018em; font-weight: 450; text-wrap: balance; animation: rahelUp .8s ease .05s both;">
@@ -200,7 +200,7 @@
     </div>
 
     <div style="position: relative; z-index: 1; display: flex; align-items: center; gap: 12px; margin-top: clamp(44px, 7vh, 92px); color: #9aa0ab;">
-      <span style="width: 22px; height: 34px; border: 1px solid #cfd4dc; border-radius: 999px; position: relative; display: inline-block;"><span style="position: absolute; left: 50%; top: 8px; width: 3px; height: 6px; margin-left: -1.5px; background: #2f6bef; border-radius: 2px; animation: rahelScroll 1.8s ease-in-out infinite;"></span></span>
+      <span style="width: 22px; height: 34px; border: 1px solid #cfd4dc; border-radius: 999px; position: relative; display: inline-block;"><span style="position: absolute; left: 50%; top: 8px; width: 3px; height: 6px; margin-left: -1.5px; background: #5f646c; border-radius: 2px; animation: rahelScroll 1.8s ease-in-out infinite;"></span></span>
       <span style="font-size: 12px; letter-spacing: 0.2em; font-weight: 600;">SCROLL TO EXPLORE</span>
     </div>
   </section>
@@ -209,7 +209,7 @@
   <section id="works" style="border-top: 1px solid #eef0f3; max-width: 1280px; margin: 0 auto; padding: clamp(72px, 11vh, 150px) clamp(20px, 5vw, 56px);">
     <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: end; gap: 24px; margin-bottom: clamp(40px, 6vh, 64px);">
       <div>
-        <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 20px;"><span style="width: 26px; height: 1px; background: #2f6bef;"></span><span style="font-size: 12px; letter-spacing: 0.24em; font-weight: 700; color: #6b7280;">SELECTED WORKS</span></div>
+        <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 20px;"><span style="width: 26px; height: 1px; background: #5f646c;"></span><span style="font-size: 12px; letter-spacing: 0.24em; font-weight: 700; color: #6b7280;">SELECTED WORKS</span></div>
         <h2 style="margin: 0; font-size: clamp(30px, 4vw, 52px); line-height: 1.1; letter-spacing: -0.03em; font-weight: 800;">포트폴리오</h2>
         <p style="margin: 12px 0 0; font-size: clamp(14px, 1.4vw, 17px); color: #8a8f98; font-weight: 500; letter-spacing: -0.01em;">문제와 해결 방향을 담은 Concept Project</p>
       </div>
@@ -217,9 +217,9 @@
     </div>
     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
       <a href="#contact" style="display: block; transition: transform .25s;" style-hover="transform: translateY(-5px);">
-        <div style="border-radius: 20px; aspect-ratio: 4/3; background: linear-gradient(150deg, rgba(110,160,255,0.22), rgba(228,238,255,0.55)); border: 1px solid #e7eaef; display: flex; align-items: flex-end; padding: 24px; position: relative; overflow: hidden;">
-          <div style="position: absolute; top: -20%; right: -10%; width: 60%; height: 90%; background: radial-gradient(circle, rgba(110,160,255,0.45), transparent 70%); filter: blur(6px);"></div>
-          <span style="position: relative; font-size: 13px; font-weight: 700; letter-spacing: 0.1em; color: #2f6bef; background: rgba(255,255,255,0.7); border-radius: 999px; padding: 7px 14px; -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px);">TAX OFFICE</span>
+        <div style="border-radius: 20px; aspect-ratio: 4/3; background: linear-gradient(150deg, rgba(155,160,167,0.22), rgba(241,242,243,0.55)); border: 1px solid #e7eaef; display: flex; align-items: flex-end; padding: 24px; position: relative; overflow: hidden;">
+          <div style="position: absolute; top: -20%; right: -10%; width: 60%; height: 90%; background: radial-gradient(circle, rgba(155,160,167,0.45), transparent 70%); filter: blur(6px);"></div>
+          <span style="position: relative; font-size: 13px; font-weight: 700; letter-spacing: 0.1em; color: #5f646c; background: rgba(255,255,255,0.7); border-radius: 999px; padding: 7px 14px; -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px);">TAX OFFICE</span>
         </div>
         <div style="padding: 20px 4px 0;">
           <h3 style="margin: 0 0 6px; font-size: 18.5px; font-weight: 700; letter-spacing: -0.015em;">세무사무소 리브랜딩</h3>
@@ -227,9 +227,9 @@
         </div>
       </a>
       <a href="#contact" style="display: block; transition: transform .25s;" style-hover="transform: translateY(-5px);">
-        <div style="border-radius: 20px; aspect-ratio: 4/3; background: linear-gradient(150deg, rgba(110,160,255,0.22), rgba(228,238,255,0.55)); border: 1px solid #e7eaef; display: flex; align-items: flex-end; padding: 24px; position: relative; overflow: hidden;">
-          <div style="position: absolute; top: -20%; right: -10%; width: 60%; height: 90%; background: radial-gradient(circle, rgba(110,160,255,0.45), transparent 70%); filter: blur(6px);"></div>
-          <span style="position: relative; font-size: 13px; font-weight: 700; letter-spacing: 0.1em; color: #2f6bef; background: rgba(255,255,255,0.7); border-radius: 999px; padding: 7px 14px; -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px);">CLINIC</span>
+        <div style="border-radius: 20px; aspect-ratio: 4/3; background: linear-gradient(150deg, rgba(155,160,167,0.22), rgba(241,242,243,0.55)); border: 1px solid #e7eaef; display: flex; align-items: flex-end; padding: 24px; position: relative; overflow: hidden;">
+          <div style="position: absolute; top: -20%; right: -10%; width: 60%; height: 90%; background: radial-gradient(circle, rgba(155,160,167,0.45), transparent 70%); filter: blur(6px);"></div>
+          <span style="position: relative; font-size: 13px; font-weight: 700; letter-spacing: 0.1em; color: #5f646c; background: rgba(255,255,255,0.7); border-radius: 999px; padding: 7px 14px; -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px);">CLINIC</span>
         </div>
         <div style="padding: 20px 4px 0;">
           <h3 style="margin: 0 0 6px; font-size: 18.5px; font-weight: 700; letter-spacing: -0.015em;">전문 의원 홈페이지</h3>
@@ -237,9 +237,9 @@
         </div>
       </a>
       <a href="#contact" style="display: block; transition: transform .25s;" style-hover="transform: translateY(-5px);">
-        <div style="border-radius: 20px; aspect-ratio: 4/3; background: linear-gradient(150deg, rgba(110,160,255,0.22), rgba(228,238,255,0.55)); border: 1px solid #e7eaef; display: flex; align-items: flex-end; padding: 24px; position: relative; overflow: hidden;">
-          <div style="position: absolute; top: -20%; right: -10%; width: 60%; height: 90%; background: radial-gradient(circle, rgba(110,160,255,0.45), transparent 70%); filter: blur(6px);"></div>
-          <span style="position: relative; font-size: 13px; font-weight: 700; letter-spacing: 0.1em; color: #2f6bef; background: rgba(255,255,255,0.7); border-radius: 999px; padding: 7px 14px; -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px);">ACADEMY</span>
+        <div style="border-radius: 20px; aspect-ratio: 4/3; background: linear-gradient(150deg, rgba(155,160,167,0.22), rgba(241,242,243,0.55)); border: 1px solid #e7eaef; display: flex; align-items: flex-end; padding: 24px; position: relative; overflow: hidden;">
+          <div style="position: absolute; top: -20%; right: -10%; width: 60%; height: 90%; background: radial-gradient(circle, rgba(155,160,167,0.45), transparent 70%); filter: blur(6px);"></div>
+          <span style="position: relative; font-size: 13px; font-weight: 700; letter-spacing: 0.1em; color: #5f646c; background: rgba(255,255,255,0.7); border-radius: 999px; padding: 7px 14px; -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px);">ACADEMY</span>
         </div>
         <div style="padding: 20px 4px 0;">
           <h3 style="margin: 0 0 6px; font-size: 18.5px; font-weight: 700; letter-spacing: -0.015em;">전문 강사 브랜드</h3>
@@ -253,26 +253,26 @@
   <section id="services" style="border-top: 1px solid #eef0f3; max-width: 1280px; margin: 0 auto; padding: clamp(72px, 11vh, 150px) clamp(20px, 5vw, 56px);">
     <div class="rahel-head-grid" style="display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.3fr); gap: clamp(28px, 5vw, 80px); align-items: end; margin-bottom: clamp(48px, 7vh, 84px);">
       <div>
-        <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 20px;"><span style="width: 26px; height: 1px; background: #2f6bef;"></span><span style="font-size: 12px; letter-spacing: 0.24em; font-weight: 700; color: #6b7280;">WHY RAHEL STUDIO</span></div>
+        <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 20px;"><span style="width: 26px; height: 1px; background: #5f646c;"></span><span style="font-size: 12px; letter-spacing: 0.24em; font-weight: 700; color: #6b7280;">WHY RAHEL STUDIO</span></div>
         <h2 style="margin: 0; font-size: clamp(28px, 3.6vw, 46px); line-height: 1.14; letter-spacing: -0.03em; font-weight: 800; text-wrap: balance;">경험을 기준으로<br>다르게 설계합니다.</h2>
       </div>
       <p style="margin: 0; font-size: clamp(15px, 1.4vw, 18px); line-height: 1.8; color: #4c515b; max-width: 560px;">전문직 홈페이지에서 중요한 것은 화려함보다 신뢰입니다. 사용자가 필요한 정보를 빠르게 찾고, 전문가의 경험과 전문성을 이해할 수 있도록 구조와 디자인을 함께 설계합니다.</p>
     </div>
     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1px; background: #eef0f3; border: 1px solid #eef0f3; border-radius: 22px; overflow: hidden;">
-      <div style="background: #fff; padding: clamp(28px, 3vw, 44px); transition: background .25s;" style-hover="background: #f6f9ff;">
-        <div style="font-size: clamp(30px, 3.4vw, 46px); font-weight: 800; letter-spacing: -0.03em; color: #2f6bef;">10+</div>
+      <div style="background: #fff; padding: clamp(28px, 3vw, 44px); transition: background .25s;" style-hover="background: #f7f7f8;">
+        <div style="font-size: clamp(30px, 3.4vw, 46px); font-weight: 800; letter-spacing: -0.03em; color: #5f646c;">10+</div>
         <div style="font-size: 12px; letter-spacing: 0.14em; color: #9aa0ab; font-weight: 700; margin: 8px 0 24px;">YEARS</div>
         <h3 style="margin: 0 0 12px; font-size: 19px; font-weight: 700; letter-spacing: -0.01em;">정보부터 설계합니다</h3>
         <p style="margin: 0; font-size: 14.5px; line-height: 1.75; color: #62676f;">10년 이상 웹사이트 품질을 평가하며 쌓은 기준으로, 고객이 무엇을 찾고 어떤 순서로 판단하는지 먼저 분석합니다.</p>
       </div>
-      <div style="background: #fff; padding: clamp(28px, 3vw, 44px); transition: background .25s;" style-hover="background: #f6f9ff;">
-        <div style="font-size: clamp(30px, 3.4vw, 46px); font-weight: 800; letter-spacing: -0.03em; color: #2f6bef;">Aa</div>
+      <div style="background: #fff; padding: clamp(28px, 3vw, 44px); transition: background .25s;" style-hover="background: #f7f7f8;">
+        <div style="font-size: clamp(30px, 3.4vw, 46px); font-weight: 800; letter-spacing: -0.03em; color: #5f646c;">Aa</div>
         <div style="font-size: 12px; letter-spacing: 0.14em; color: #9aa0ab; font-weight: 700; margin: 8px 0 24px;">DESIGN</div>
         <h3 style="margin: 0 0 12px; font-size: 19px; font-weight: 700; letter-spacing: -0.01em;">복잡한 전문성을 쉽게 정리합니다</h3>
         <p style="margin: 0; font-size: 14.5px; line-height: 1.75; color: #62676f;">전문 용어와 다양한 서비스 내용을 방문자가 이해하기 쉬운 정보 구조와 언어로 재구성합니다.</p>
       </div>
-      <div style="background: #fff; padding: clamp(28px, 3vw, 44px); transition: background .25s;" style-hover="background: #f6f9ff;">
-        <div style="font-size: clamp(30px, 3.4vw, 46px); font-weight: 800; letter-spacing: -0.03em; color: #2f6bef;">E·E·A·T</div>
+      <div style="background: #fff; padding: clamp(28px, 3vw, 44px); transition: background .25s;" style-hover="background: #f7f7f8;">
+        <div style="font-size: clamp(30px, 3.4vw, 46px); font-weight: 800; letter-spacing: -0.03em; color: #5f646c;">E·E·A·T</div>
         <div style="font-size: 12px; letter-spacing: 0.14em; color: #9aa0ab; font-weight: 700; margin: 8px 0 24px;">TRUST</div>
         <h3 style="margin: 0 0 12px; font-size: 19px; font-weight: 700; letter-spacing: -0.01em;">디자인과 검색을 함께 봅니다</h3>
         <p style="margin: 0; font-size: 14.5px; line-height: 1.75; color: #62676f;">보기 좋은 화면뿐 아니라 콘텐츠 구조, 검색 의도와 전문성을 뒷받침하는 신뢰 요소까지 함께 고려합니다.</p>
@@ -284,38 +284,38 @@
   <section id="fields" style="border-top: 1px solid #eef0f3; max-width: 1280px; margin: 0 auto; padding: clamp(72px, 11vh, 150px) clamp(20px, 5vw, 56px);">
     <div class="rahel-head-grid" style="display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.3fr); gap: clamp(28px, 5vw, 80px); align-items: end; margin-bottom: clamp(48px, 7vh, 84px);">
       <div>
-        <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 20px;"><span style="width: 26px; height: 1px; background: #2f6bef;"></span><span style="font-size: 12px; letter-spacing: 0.24em; font-weight: 700; color: #6b7280;">PROFESSIONAL FIELDS</span></div>
+        <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 20px;"><span style="width: 26px; height: 1px; background: #5f646c;"></span><span style="font-size: 12px; letter-spacing: 0.24em; font-weight: 700; color: #6b7280;">PROFESSIONAL FIELDS</span></div>
         <h2 style="margin: 0; font-size: clamp(28px, 3.6vw, 46px); line-height: 1.14; letter-spacing: -0.03em; font-weight: 800; text-wrap: balance;">신뢰가 선택의 기준이 되는<br>분야에 집중합니다.</h2>
       </div>
       <p style="margin: 0; font-size: clamp(15px, 1.4vw, 18px); line-height: 1.8; color: #4c515b; max-width: 540px;">서비스 설명이 복잡하거나, 경력과 전문성을 명확히 보여줘야 하는 업종에 맞춰 정보 구조를 설계합니다.</p>
     </div>
     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 18px;">
-      <a href="#contact" style="border: 1px solid #e7eaef; border-radius: 20px; padding: clamp(26px, 2.6vw, 38px); display: block; transition: transform .25s, border-color .25s, box-shadow .25s; background: #fff;" style-hover="transform: translateY(-4px); border-color: #2f6bef; box-shadow: 0 22px 46px -26px rgba(47,107,239,0.4);">
+      <a href="#contact" style="border: 1px solid #e7eaef; border-radius: 20px; padding: clamp(26px, 2.6vw, 38px); display: block; transition: transform .25s, border-color .25s, box-shadow .25s; background: #fff;" style-hover="transform: translateY(-4px); border-color: #5f646c; box-shadow: 0 22px 46px -26px rgba(95,100,108,0.4);">
         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 28px;"><span style="font-size: 12px; letter-spacing: 0.18em; color: #9aa0ab; font-weight: 700;">TAX</span><span style="font-size: 15px; color: #b9bec7;">↗</span></div>
         <h3 style="margin: 0 0 10px; font-size: 20px; font-weight: 700; letter-spacing: -0.015em;">세무사</h3>
         <p style="margin: 0; font-size: 14.5px; line-height: 1.7; color: #62676f;">세무 서비스와 상담 범위를 명확히 정리해 신뢰를 전합니다.</p>
       </a>
-      <a href="#contact" style="border: 1px solid #e7eaef; border-radius: 20px; padding: clamp(26px, 2.6vw, 38px); display: block; transition: transform .25s, border-color .25s, box-shadow .25s; background: #fff;" style-hover="transform: translateY(-4px); border-color: #2f6bef; box-shadow: 0 22px 46px -26px rgba(47,107,239,0.4);">
+      <a href="#contact" style="border: 1px solid #e7eaef; border-radius: 20px; padding: clamp(26px, 2.6vw, 38px); display: block; transition: transform .25s, border-color .25s, box-shadow .25s; background: #fff;" style-hover="transform: translateY(-4px); border-color: #5f646c; box-shadow: 0 22px 46px -26px rgba(95,100,108,0.4);">
         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 28px;"><span style="font-size: 12px; letter-spacing: 0.18em; color: #9aa0ab; font-weight: 700;">LABOR</span><span style="font-size: 15px; color: #b9bec7;">↗</span></div>
         <h3 style="margin: 0 0 10px; font-size: 20px; font-weight: 700; letter-spacing: -0.015em;">노무사</h3>
         <p style="margin: 0; font-size: 14.5px; line-height: 1.7; color: #62676f;">노무 이슈와 자문 영역을 이해하기 쉬운 구조로 안내합니다.</p>
       </a>
-      <a href="#contact" style="border: 1px solid #e7eaef; border-radius: 20px; padding: clamp(26px, 2.6vw, 38px); display: block; transition: transform .25s, border-color .25s, box-shadow .25s; background: #fff;" style-hover="transform: translateY(-4px); border-color: #2f6bef; box-shadow: 0 22px 46px -26px rgba(47,107,239,0.4);">
+      <a href="#contact" style="border: 1px solid #e7eaef; border-radius: 20px; padding: clamp(26px, 2.6vw, 38px); display: block; transition: transform .25s, border-color .25s, box-shadow .25s; background: #fff;" style-hover="transform: translateY(-4px); border-color: #5f646c; box-shadow: 0 22px 46px -26px rgba(95,100,108,0.4);">
         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 28px;"><span style="font-size: 12px; letter-spacing: 0.18em; color: #9aa0ab; font-weight: 700;">ACCOUNT</span><span style="font-size: 15px; color: #b9bec7;">↗</span></div>
         <h3 style="margin: 0 0 10px; font-size: 20px; font-weight: 700; letter-spacing: -0.015em;">회계사</h3>
         <p style="margin: 0; font-size: 14.5px; line-height: 1.7; color: #62676f;">회계·감사 전문성과 실적을 정돈된 화면으로 보여줍니다.</p>
       </a>
-      <a href="#contact" style="border: 1px solid #e7eaef; border-radius: 20px; padding: clamp(26px, 2.6vw, 38px); display: block; transition: transform .25s, border-color .25s, box-shadow .25s; background: #fff;" style-hover="transform: translateY(-4px); border-color: #2f6bef; box-shadow: 0 22px 46px -26px rgba(47,107,239,0.4);">
+      <a href="#contact" style="border: 1px solid #e7eaef; border-radius: 20px; padding: clamp(26px, 2.6vw, 38px); display: block; transition: transform .25s, border-color .25s, box-shadow .25s; background: #fff;" style-hover="transform: translateY(-4px); border-color: #5f646c; box-shadow: 0 22px 46px -26px rgba(95,100,108,0.4);">
         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 28px;"><span style="font-size: 12px; letter-spacing: 0.18em; color: #9aa0ab; font-weight: 700;">MEDICAL</span><span style="font-size: 15px; color: #b9bec7;">↗</span></div>
         <h3 style="margin: 0 0 10px; font-size: 20px; font-weight: 700; letter-spacing: -0.015em;">의료·병원</h3>
         <p style="margin: 0; font-size: 14.5px; line-height: 1.7; color: #62676f;">진료 분야와 의료진 전문성을 신뢰감 있게 구성합니다.</p>
       </a>
-      <a href="#contact" style="border: 1px solid #e7eaef; border-radius: 20px; padding: clamp(26px, 2.6vw, 38px); display: block; transition: transform .25s, border-color .25s, box-shadow .25s; background: #fff;" style-hover="transform: translateY(-4px); border-color: #2f6bef; box-shadow: 0 22px 46px -26px rgba(47,107,239,0.4);">
+      <a href="#contact" style="border: 1px solid #e7eaef; border-radius: 20px; padding: clamp(26px, 2.6vw, 38px); display: block; transition: transform .25s, border-color .25s, box-shadow .25s; background: #fff;" style-hover="transform: translateY(-4px); border-color: #5f646c; box-shadow: 0 22px 46px -26px rgba(95,100,108,0.4);">
         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 28px;"><span style="font-size: 12px; letter-spacing: 0.18em; color: #9aa0ab; font-weight: 700;">ACADEMY</span><span style="font-size: 15px; color: #b9bec7;">↗</span></div>
         <h3 style="margin: 0 0 10px; font-size: 20px; font-weight: 700; letter-spacing: -0.015em;">학원·강사</h3>
         <p style="margin: 0; font-size: 14.5px; line-height: 1.7; color: #62676f;">커리큘럼과 강사 경력을 설득력 있게 전달합니다.</p>
       </a>
-      <a href="#contact" style="border: 1px solid #e7eaef; border-radius: 20px; padding: clamp(26px, 2.6vw, 38px); display: block; transition: transform .25s, border-color .25s, box-shadow .25s; background: #fff;" style-hover="transform: translateY(-4px); border-color: #2f6bef; box-shadow: 0 22px 46px -26px rgba(47,107,239,0.4);">
+      <a href="#contact" style="border: 1px solid #e7eaef; border-radius: 20px; padding: clamp(26px, 2.6vw, 38px); display: block; transition: transform .25s, border-color .25s, box-shadow .25s; background: #fff;" style-hover="transform: translateY(-4px); border-color: #5f646c; box-shadow: 0 22px 46px -26px rgba(95,100,108,0.4);">
         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 28px;"><span style="font-size: 12px; letter-spacing: 0.18em; color: #9aa0ab; font-weight: 700;">EXPERT</span><span style="font-size: 15px; color: #b9bec7;">↗</span></div>
         <h3 style="margin: 0 0 10px; font-size: 20px; font-weight: 700; letter-spacing: -0.015em;">개인 전문가</h3>
         <p style="margin: 0; font-size: 14.5px; line-height: 1.7; color: #62676f;">개인 브랜드와 강점을 프로필 중심으로 설계합니다.</p>
@@ -328,29 +328,29 @@
     <div style="max-width: 1280px; margin: 0 auto; padding: clamp(76px, 12vh, 160px) clamp(20px, 5vw, 56px);">
       <div class="rahel-head-grid" style="display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.25fr); gap: clamp(28px, 5vw, 80px); align-items: end; margin-bottom: clamp(52px, 8vh, 92px);">
         <div>
-          <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 20px;"><span style="width: 26px; height: 1px; background: #6f9bff;"></span><span style="font-size: 12px; letter-spacing: 0.24em; font-weight: 700; color: #8b93a3;">WHAT A VISITOR DECIDES</span></div>
+          <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 20px;"><span style="width: 26px; height: 1px; background: #aeb4bb;"></span><span style="font-size: 12px; letter-spacing: 0.24em; font-weight: 700; color: #8b93a3;">WHAT A VISITOR DECIDES</span></div>
           <h2 style="margin: 0; font-size: clamp(28px, 3.8vw, 48px); line-height: 1.12; letter-spacing: -0.03em; font-weight: 800; text-wrap: balance;">고객이 궁금해하는<br>순서대로 설계합니다.</h2>
         </div>
         <p style="margin: 0; font-size: clamp(15px, 1.4vw, 18px); line-height: 1.8; color: #aab0bd; max-width: 560px;">전문직 웹사이트의 방문자는 디자인을 감상하러 오는 것이 아닙니다. 자신의 문제를 해결할 수 있는 전문가인지 확인하기 위해 방문합니다. 다음 질문에 빠르게 답을 얻도록 정보를 설계합니다.</p>
       </div>
       <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1px; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.08); border-radius: 22px; overflow: hidden;">
         <div style="background: #12161f; padding: clamp(28px, 3vw, 40px); min-height: 230px; display: flex; flex-direction: column;">
-          <div style="font-size: 13px; letter-spacing: 0.16em; color: #6f9bff; font-weight: 700; margin-bottom: auto;">01</div>
+          <div style="font-size: 13px; letter-spacing: 0.16em; color: #aeb4bb; font-weight: 700; margin-bottom: auto;">01</div>
           <h3 style="margin: 26px 0 12px; font-size: 21px; font-weight: 700; letter-spacing: -0.015em;">누구인가</h3>
           <p style="margin: 0; font-size: 14.5px; line-height: 1.7; color: #9aa2b0;">방문자는 먼저 이 전문가가 누구인지 확인합니다.</p>
         </div>
         <div style="background: #12161f; padding: clamp(28px, 3vw, 40px); min-height: 230px; display: flex; flex-direction: column;">
-          <div style="font-size: 13px; letter-spacing: 0.16em; color: #6f9bff; font-weight: 700; margin-bottom: auto;">02</div>
+          <div style="font-size: 13px; letter-spacing: 0.16em; color: #aeb4bb; font-weight: 700; margin-bottom: auto;">02</div>
           <h3 style="margin: 26px 0 12px; font-size: 21px; font-weight: 700; letter-spacing: -0.015em;">무엇을 전문으로 하는가</h3>
           <p style="margin: 0; font-size: 14.5px; line-height: 1.7; color: #9aa2b0;">어떤 분야의 전문가이며 무엇을 다루는지 파악합니다.</p>
         </div>
         <div style="background: #12161f; padding: clamp(28px, 3vw, 40px); min-height: 230px; display: flex; flex-direction: column;">
-          <div style="font-size: 13px; letter-spacing: 0.16em; color: #6f9bff; font-weight: 700; margin-bottom: auto;">03</div>
+          <div style="font-size: 13px; letter-spacing: 0.16em; color: #aeb4bb; font-weight: 700; margin-bottom: auto;">03</div>
           <h3 style="margin: 26px 0 12px; font-size: 21px; font-weight: 700; letter-spacing: -0.015em;">내 문제를 해결할 수 있는가</h3>
           <p style="margin: 0; font-size: 14.5px; line-height: 1.7; color: #9aa2b0;">내 문제를 해결해 줄 수 있는지 빠르게 판단합니다.</p>
         </div>
         <div style="background: #12161f; padding: clamp(28px, 3vw, 40px); min-height: 230px; display: flex; flex-direction: column;">
-          <div style="font-size: 13px; letter-spacing: 0.16em; color: #6f9bff; font-weight: 700; margin-bottom: auto;">04</div>
+          <div style="font-size: 13px; letter-spacing: 0.16em; color: #aeb4bb; font-weight: 700; margin-bottom: auto;">04</div>
           <h3 style="margin: 26px 0 12px; font-size: 21px; font-weight: 700; letter-spacing: -0.015em;">왜 이곳을 선택해야 하는가</h3>
           <p style="margin: 0; font-size: 14.5px; line-height: 1.7; color: #9aa2b0;">다른 곳이 아닌 이곳을 선택할 이유를 찾습니다.</p>
         </div>
@@ -360,14 +360,14 @@
 
   <!-- CONTACT -->
   <section id="contact" style="max-width: 1280px; margin: clamp(100px, 15vh, 176px) auto clamp(80px, 12vh, 140px); padding: 0 clamp(20px, 5vw, 56px);">
-    <div style="position: relative; overflow: hidden; border-radius: 30px; background: linear-gradient(150deg,#1a2233 0%,#0f131b 100%); color: #fff; padding: clamp(48px, 8vw, 96px) clamp(28px, 6vw, 88px);">
-      <div style="position: absolute; top: -20%; right: -6%; width: 46%; height: 120%; background: radial-gradient(circle, rgba(90,140,255,0.45), transparent 68%); filter: blur(20px); pointer-events: none;"></div>
+    <div style="position: relative; overflow: hidden; border-radius: 30px; background: linear-gradient(150deg,#17191d 0%,#0f131b 100%); color: #fff; padding: clamp(48px, 8vw, 96px) clamp(28px, 6vw, 88px);">
+      <div style="position: absolute; top: -20%; right: -6%; width: 46%; height: 120%; background: radial-gradient(circle, rgba(116,122,130,0.45), transparent 68%); filter: blur(20px); pointer-events: none;"></div>
       <div style="position: relative; max-width: 660px;">
         <div style="font-size: 12px; letter-spacing: 0.24em; font-weight: 700; color: #8b93a3; margin-bottom: 22px;">START A PROJECT</div>
         <h2 style="margin: 0; font-size: clamp(30px, 4.4vw, 56px); line-height: 1.1; letter-spacing: -0.035em; font-weight: 800; text-wrap: balance;">전문성이 제대로 보이는<br>웹사이트를 함께 만들겠습니다.</h2>
         <p style="margin: 26px 0 40px; font-size: clamp(15px, 1.4vw, 18px); line-height: 1.8; color: #aab0bd;">현재 홈페이지의 문제, 새롭게 만들고 싶은 사이트, 아직 정리되지 않은 아이디어도 괜찮습니다. 업종과 필요한 내용을 알려주시면 적합한 방향을 함께 검토합니다.</p>
         <div style="display: flex; flex-wrap: wrap; gap: 14px;">
-          <a href="mailto:eunakim1984@gmail.com" style="display: inline-flex; align-items: center; gap: 9px; background: linear-gradient(180deg,#3a76f2,#2f6bef); color: #fff; font-size: 15px; font-weight: 600; padding: 15px 30px; border-radius: 999px; box-shadow: 0 10px 26px -10px rgba(47,107,239,0.7); transition: transform .2s;" style-hover="transform: translateY(-2px);">프로젝트 상담 <span>→</span></a>
+          <a href="mailto:eunakim1984@gmail.com" style="display: inline-flex; align-items: center; gap: 9px; background: linear-gradient(180deg,#70767e,#5f646c); color: #fff; font-size: 15px; font-weight: 600; padding: 15px 30px; border-radius: 999px; box-shadow: 0 10px 26px -10px rgba(95,100,108,0.7); transition: transform .2s;" style-hover="transform: translateY(-2px);">프로젝트 상담 <span>→</span></a>
           <a href="mailto:eunakim1984@gmail.com" style="display: inline-flex; align-items: center; gap: 9px; border: 1px solid rgba(255,255,255,0.22); color: #fff; font-size: 15px; font-weight: 600; padding: 15px 30px; border-radius: 999px; transition: background .2s, border-color .2s;" style-hover="background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.4);">이메일 문의 <span style="font-size: 13px;">↗</span></a>
         </div>
       </div>
@@ -378,7 +378,7 @@
   <footer style="border-top: 1px solid #eef0f3;">
     <div style="max-width: 1280px; margin: 0 auto; padding: clamp(40px, 6vh, 64px) clamp(20px, 5vw, 56px); display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 20px;">
       <div style="display: flex; align-items: center; gap: 11px; font-weight: 800; font-size: 16px;">
-        <span style="width: 16px; height: 16px; border-radius: 50%; background: radial-gradient(circle at 32% 28%, #8fb6ff 0%, #2f6bef 48%, #1a44b8 100%); display: inline-block;"></span>
+        <span style="width: 16px; height: 16px; border-radius: 50%; background: radial-gradient(circle at 32% 28%, #f5f6f7 0%, #5f646c 48%, #555b63 100%); display: inline-block;"></span>
         RAHEL STUDIO
       </div>
       <div style="font-size: 13.5px; color: #9aa0ab;">© 2026 RAHEL STUDIO · SEOUL · 전문직 웹사이트 스튜디오</div>
